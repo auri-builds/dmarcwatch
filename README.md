@@ -34,6 +34,17 @@ Stack: Node ≥22.5 (uses built-in `node:sqlite`), Express, fast-xml-parser, adm
 
 ## Deploy
 
+### Railway (current target)
+
+The repo ships a `Dockerfile` (Node 24) and `railway.json`, so deploying is:
+
+1. Create a Railway service from this repo (GitHub integration) — it picks up the Dockerfile automatically.
+2. Mount a **volume at `/data`** (the image sets `DATA_DIR=/data`; without a volume the SQLite db is wiped on every deploy).
+3. Set `ADMIN_EMAIL` to the founder's account email to unlock `/admin/metrics`.
+4. Enable a public domain on the service (port 3000).
+
+### Anywhere else
+
 Any Node host with a persistent disk for the SQLite file works:
 
 ```bash
