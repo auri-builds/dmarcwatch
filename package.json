@@ -1,0 +1,20 @@
+{
+  "name": "dmarcwatch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DMARC monitoring & alerting for agencies, MSPs and small businesses",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "adm-zip": "^0.6.0",
+    "express": "^5.2.1",
+    "fast-xml-parser": "^5.10.0"
+  }
+}
